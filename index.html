@@ -1,142 +1,106 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechZone - Thế Giới Công Nghệ</title>
-    <!-- Nhúng Tailwind CSS qua CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Nhúng Font Awesome để dùng Icon -->
-    <link rel="stylesheet" href="https://cloudflare.com">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video của tôi</title>
+<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style type="text/tailwindcss">
+  @custom-variant dark (&:where(.dark, .dark *));
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
+<body class="bg-white dark:bg-neutral-950 text-neutral-900 dark:text-white font-sans transition-colors">
 
-    <!-- 1. THANH ĐIỀU HƯỚNG (NAVBAR) -->
-    <nav class="sticky top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-16">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <i class="fa-solid fa-microchip text-cyan-400 text-2xl"></i>
-                    <span class="text-xl font-bold tracking-wider bg-gradient-to-r flow-root from-cyan-400 to-blue-500 bg-clip-text text-transparent">TECHZONE</span>
-                </div>
-                <!-- Menu điều hướng -->
-                <div class="hidden md:flex space-x-8 text-sm font-medium">
-                    <a href="#" class="text-cyan-400">Trang chủ</a>
-                    <a href="#" class="text-slate-300 hover:text-cyan-400 transition">Sản phẩm</a>
-                    <a href="#" class="text-slate-300 hover:text-cyan-400 transition">Ưu đãi</a>
-                    <a href="#" class="text-slate-300 hover:text-cyan-400 transition">Tin công nghệ</a>
-                </div>
-                <!-- Ô tìm kiếm và Giỏ hàng -->
-                <div class="flex items-center gap-4">
-                    <div class="relative hidden sm:block">
-                        <input type="text" placeholder="Tìm sản phẩm..." class="bg-slate-800 text-sm text-slate-200 pl-9 pr-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-cyan-400 border border-slate-700 w-48 lg:w-64">
-                        <i class="fa-solid fa-magnifying-glass absolute left-3 top-3 text-slate-400 text-xs"></i>
-                    </div>
-                    <button class="relative p-2 text-slate-300 hover:text-cyan-400 transition">
-                        <i class="fa-solid fa-bag-shopping text-xl"></i>
-                        <span class="absolute top-0 right-0 bg-cyan-500 text-slate-950 text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">3</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="sticky top-0 z-40 bg-white/90 dark:bg-neutral-950/90 backdrop-blur border-b border-neutral-200 dark:border-neutral-800">
+    <div class="max-w-3xl mx-auto flex items-center gap-3 px-4 py-3">
+      <div class="flex items-center gap-2 font-semibold text-base shrink-0">
+        <i class="fa-solid fa-clapperboard text-red-600"></i>
+        <span>MyTube</span>
+      </div>
 
-    <!-- 2. BANNER CHÍNH (HERO SECTION) -->
-    <header class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-slate-900 to-slate-850 py-20 lg:py-32">
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(34,211,238,0.08),transparent_45%)]"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <!-- Nội dung chữ -->
-                <div>
-                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-cyan-500/10 text-cyan-400 mb-6 border border-cyan-500/20">
-                        <i class="fa-solid fa-bolt"></i> Siêu phẩm mới trình làng
-                    </span>
-                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6 leading-tight">
-                        Định nghĩa lại <br>
-                        <span class="bg-gradient-to-r from-cyan-400 via-blue-500 to-indigo-500 bg-clip-text text-transparent">Sức Mạnh Laptop</span>
-                    </h1>
-                    <p class="text-lg text-slate-400 mb-8 max-w-xl">
-                        Trang bị chip AI thế hệ mới nhất, màn hình OLED 240Hz siêu mượt và thời lượng pin đột phá lên đến 20 giờ liên tục.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#" class="px-8 py-3.5 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold rounded-xl shadow-lg shadow-cyan-500/20 transition transform hover:-translate-y-0.5">
-                            Mua ngay công nghệ mới
-                        </a>
-                        <a href="#" class="px-8 py-3.5 bg-slate-800 hover:bg-slate-750 text-white font-medium rounded-xl border border-slate-700 transition">
-                            Xem thông số chi tiết
-                        </a>
-                    </div>
-                </div>
-                <!-- Ảnh minh họa sản phẩm -->
-                <div class="flex justify-center relative">
-                    <div class="absolute w-72 h-72 bg-blue-500/10 rounded-full blur-3xl -z-10"></div>
-                    <img src="https://unsplash.com" alt="Laptop Gaming" class="rounded-2xl shadow-2xl border border-slate-800 object-cover w-full max-w-md transform lg:rotate-2 hover:rotate-0 transition duration-500">
-                </div>
-            </div>
-        </div>
-    </header>
+      <div class="flex-1 relative">
+        <i class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-neutral-400 text-sm"></i>
+        <input id="searchInput" type="text" placeholder="Tìm video theo tên"
+          class="w-full bg-neutral-100 dark:bg-neutral-800 text-sm rounded-full pl-9 pr-3 py-2
+          outline-none focus:ring-1 focus:ring-red-600 placeholder:text-neutral-400">
+      </div>
 
-    <!-- 3. DANH MỤC NỔI BẬT (CATEGORIES) -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 class="text-2xl font-bold mb-8 flex items-center gap-3">
-            <span class="w-1 h-6 bg-cyan-500 rounded-full"></span> Danh mục sản phẩm
-        </h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="bg-slate-850 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 text-center transition cursor-pointer group">
-                <div class="w-12 h-12 mx-auto bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 text-xl mb-4 group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
-                    <i class="fa-solid fa-laptop"></i>
-                </div>
-                <h3 class="font-semibold text-slate-200">Laptop</h3>
-            </div>
-            <div class="bg-slate-850 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 text-center transition cursor-pointer group">
-                <div class="w-12 h-12 mx-auto bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 text-xl mb-4 group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
-                    <i class="fa-solid fa-mobile-screen-button"></i>
-                </div>
-                <h3 class="font-semibold text-slate-200">Điện thoại</h3>
-            </div>
-            <div class="bg-slate-850 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 text-center transition cursor-pointer group">
-                <div class="w-12 h-12 mx-auto bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 text-xl mb-4 group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
-                    <i class="fa-solid fa-headphones"></i>
-                </div>
-                <h3 class="font-semibold text-slate-200">Âm thanh</h3>
-            </div>
-            <div class="bg-slate-850 p-6 rounded-2xl border border-slate-800 hover:border-cyan-500/50 text-center transition cursor-pointer group">
-                <div class="w-12 h-12 mx-auto bg-slate-800 rounded-xl flex items-center justify-center text-cyan-400 text-xl mb-4 group-hover:bg-cyan-500 group-hover:text-slate-950 transition">
-                    <i class="fa-solid fa-clock"></i>
-                </div>
-                <h3 class="font-semibold text-slate-200">Đồng hồ thông minh</h3>
-            </div>
-        </div>
-    </section>
+      <button id="themeToggle" class="shrink-0 w-9 h-9 rounded-full flex items-center justify-center
+        hover:bg-neutral-100 dark:hover:bg-neutral-800 transition">
+        <i id="themeIcon" class="fa-solid fa-moon text-sm"></i>
+      </button>
+    </div>
+  </nav>
 
-    <!-- 4. DANH SÁCH SẢN PHẨM BÁN CHẠY (PRODUCTS GRID) -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 mb-16">
-        <div class="flex items-center justify-between mb-8">
-            <h2 class="text-2xl font-bold flex items-center gap-3">
-                <span class="w-1 h-6 bg-cyan-500 rounded-full"></span> Sản phẩm công nghệ hot
-            </h2>
-            <a href="#" class="text-sm font-medium text-cyan-400 hover:underline">Xem tất cả <i class="fa-solid fa-arrow-right text-xs ml-1"></i></a>
+  <main class="max-w-3xl mx-auto p-4">
+
+    <!-- Form thêm video -->
+    <div class="flex flex-col gap-2 mb-5">
+      <input id="nameInput" type="text" placeholder="Đặt tên cho video (không bắt buộc)"
+        class="bg-neutral-100 dark:bg-neutral-800 text-sm rounded-lg px-3 py-2 outline-none
+        focus:ring-1 focus:ring-red-600 placeholder:text-neutral-400">
+      <div class="flex gap-2">
+        <input id="linkInput" type="text" placeholder="Dán link YouTube hoặc .mp4"
+          class="flex-1 bg-neutral-100 dark:bg-neutral-800 text-sm rounded-lg px-3 py-2 outline-none
+          focus:ring-1 focus:ring-red-600 placeholder:text-neutral-400">
+        <button id="addBtn" class="bg-red-600 hover:bg-red-700 transition text-white text-sm px-4 rounded-lg shrink-0">
+          Lưu
+        </button>
+      </div>
+      <p id="errorMsg" class="text-red-500 text-xs hidden"></p>
+    </div>
+
+    <!-- Danh sách video -->
+    <h2 class="text-sm font-semibold text-neutral-500 dark:text-neutral-400 mb-2">Video đã lưu</h2>
+    <div id="linkList" class="flex flex-col gap-2 mb-6"></div>
+
+    <!-- Player mp4 custom -->
+    <div id="player" class="hidden max-w-xl mx-auto">
+      <div id="playerBox" class="relative w-full">
+        <video id="videoTag" class="w-full block bg-black rounded-lg"></video>
+
+        <div id="leftTap" class="absolute top-0 bottom-16 left-0 w-1/3"></div>
+        <div id="rightTap" class="absolute top-0 bottom-16 right-0 w-1/3"></div>
+
+        <div id="seekFlash" class="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+          bg-black/60 text-white px-4 py-2 rounded-full text-sm items-center gap-2 pointer-events-none">
+          <i id="seekIcon" class="fa-solid fa-backward"></i> <span id="seekText">10s</span>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <!-- Sản phẩm 1 -->
-            <div class="bg-slate-850 rounded-2xl border border-slate-800 overflow-hidden group hover:shadow-xl hover:shadow-cyan-500/5 transition duration-300">
-                <div class="relative bg-slate-800 aspect-video overflow-hidden">
-                    <img src="https://unsplash.com" alt="Smartwatch" class="object-cover w-full h-full group-hover:scale-105 transition duration-500">
-                    <span class="absolute top-3 left-3 bg-red-500 text-white font-bold text-xs px-2.5 py-1 rounded-md">-15%</span>
-                </div>
-                <div class="p-5">
-                    <span class="text-xs font-medium text-slate-500 uppercase tracking-wider">Wearable</span>
-                    <h3 class="font-bold text-slate-200 mt-1 mb-2 line-clamp-1 group-hover:text-cyan-400 transition">Đồng hồ thông minh Ultra S Pro</h3>
-                    <div class="flex items-center gap-2 mb-4">
-                        <span class="text-cyan-400 font-bold">5.490.000đ</span>
-                        <span class="text-sm text-slate-500 line-through">6.500.000đ</span>
-                    </div>
-                    <button class="w-full py-2.5 bg-slate-800 hover:bg-cyan-500 hover:text-slate-950 font-semibold rounded-xl border border-slate-700 hover:border-transparent text-sm transition flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-cart-plus"></i> Thêm vào giỏ
-                    </button>
-                </div>
-            </div>
+        <div id="controls" class="absolute left-0 right-0 bottom-0 bg-gradient-to-t from-black/85 to-transparent
+          px-3 pt-6 pb-2 transition-opacity duration-200 rounded-b-lg">
+          <input id="seek" type="range" min="0" max="100" value="0" step="0.1"
+            class="w-full accent-red-600 cursor-pointer h-1">
+          <div class="flex items-center gap-4 mt-1">
+            <button id="playBtn" class="text-white text-base hover:text-red-500 transition">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <button id="back10" class="text-white text-sm hover:text-red-500 transition">
+              <i class="fa-solid fa-rotate-left"></i>
+            </button>
+            <button id="fwd10" class="text-white text-sm hover:text-red-500 transition">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+            <span id="time" class="text-xs text-neutral-300">0:00 / 0:00</span>
+            <input id="volume" type="range" min="0" max="1" step="0.05" value="1"
+              class="w-14 accent-red-600 ml-auto h-1">
+          </div>
+        </div>
+      </div>
+    </div>
 
-            <!-- Sản phẩm 2 -->
+    <!-- Player YouTube nhúng -->
+    <div id="ytWrap" class="hidden max-w-xl mx-auto">
+      <div class="aspect-video w-full rounded-lg overflow-hidden bg-black">
+        <iframe id="ytFrame" class="w-full h-full" src="" frameborder="0"
+          allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
